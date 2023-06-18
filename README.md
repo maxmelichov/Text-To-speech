@@ -9,6 +9,6 @@ For a quick start look at [roboshaul_usage.ipynb](https://github.com/maxmelichov
 
 The system consists of the SASPEECH dataset, which is a collection of recordings of Shaul Amsterdamski's unedited recordings for the podcast 'Hayot Kis', and a Text-to-Speech system trained on the dataset, implemented in the Tacotron 2 by nvidia AI TTS framework.
 
-To download the dataset for training, go to [link](https://story.kan.org.il/robo_shaul/c/bb084921/?cardId=bb084921](https://openslr.org/134)https://openslr.org/134)
+To download the dataset for training, go to [link]([https://story.kan.org.il/robo_shaul/c/bb084921/?cardId=bb084921](https://openslr.org/134)https://openslr.org/134](https://openslr.org/134)https://openslr.org/134)
 
 
