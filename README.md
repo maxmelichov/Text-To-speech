@@ -19,7 +19,7 @@ The model expects diacritized Hebrew (עברית מנוקדת), we recommend [Na
 For a quick start look at [Notebook](https://github.com/maxmelichov/Text-To-speech/blob/main/DataCreation.ipynb)https://github.com/maxmelichov/Text-To-speech/blob/main/DataCreation.ipynb)
 
 ## How to use the training notebook and the synthesis notebook
-You can use these videos that will help you to gather the data and also train your model: [Part1](https://www.youtube.com/watch?v=b1fzyM0VhhI),[Part2] (https://www.youtube.com/watch?v=gVqSEIr2PD4&t=284s) 
+You can use these videos that will help you to gather the data and also train your model: [Part1](https://www.youtube.com/watch?v=b1fzyM0VhhI),[Part2](https://www.youtube.com/watch?v=gVqSEIr2PD4&t=284s) 
 
 We're using the custom Tacotron 2 that we took from Nvidia, and custom notebooks that were shown in the video.
 
@@ -30,7 +30,7 @@ We're using the custom Tacotron 2 that we took from Nvidia, and custom notebooks
 
 ### Contact Us
 
-We are Roee Shenberg and Orian Sharoni or in other words Up·AI. If you have any questions or comments, please feel free to contact us using the information below.
+We are Maxim Melichov and Tony Hasson. If you have any questions or comments, please feel free to contact us using the information below.
 
 | **Maxim Melichov**          | **Tony Hasson**         |
 | ------------------------- | ------------------------- |
