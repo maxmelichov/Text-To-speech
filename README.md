@@ -32,6 +32,6 @@ We're using the custom Tacotron 2 that we took from Nvidia, and custom notebooks
 
 We are Roee Shenberg and Orian Sharoni or in other words Up·AI. If you have any questions or comments, please feel free to contact us using the information below.
 
-| **Maxim Melichov**          | **RTony Hasson**         |
+| **Maxim Melichov**          | **Tony Hasson**         |
 | ------------------------- | ------------------------- |
 | <a href="https://www.linkedin.com/in/max-melichov/" target="_blank">Connect on LinkedIn</a> | <a href="https://www.linkedin.com/in/tony-hasson-a14402205/" target="_blank">Connect on LinkedIn</a> |
