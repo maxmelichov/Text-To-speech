@@ -740,7 +740,7 @@ def HebrewWordToEnglishSound(word,index):
     return new_sentence
 
 ##takes hebrew sentence and turns it into english sounds
-def ARPA(sentence,index=0):
+def HebrewToEnglish(sentence,index=0):
     words = sentence.split()
     new_sentence = ""
 
