@@ -22,7 +22,7 @@ For a quick start look at [Notebook](https://github.com/maxmelichov/Text-To-spee
 ## How to use the training notebook and the synthesis notebook
 You can use these videos that will help you to gather the data and also train your model: [Part1](https://www.youtube.com/watch?v=b1fzyM0VhhI),[Part2](https://www.youtube.com/watch?v=gVqSEIr2PD4&t=284s) 
 
-We're using the custom Tacotron 2 that we took from Nvidia, and custom notebooks that were shown in the video.
+We're using the custom Tacotron 2 that we took from Nvidia and custom notebooks.
 
 
 ## What can be done to make this model even more robust:
