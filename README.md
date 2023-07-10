@@ -25,6 +25,11 @@ You can use these videos that will help you to gather the data and also train yo
 We're using the custom Tacotron 2 that we took from Nvidia and custom notebooks.
 
 
+## Information about HebrewToEnglish.py
+We implemented several functions that deal with processing and converting Hebrew text into English sounds. It includes functions for breaking down numbers into Hebrew words, converting Hebrew letters into their corresponding English sounds, and converting entire Hebrew sentences into English sounds. The code also includes functions for handling numbers, punctuation marks, and special cases within the Hebrew text.
+
+
+
 ## What can be done to make this model even more robust:
 1. Make a set of all the possible UNICODE-8 of Hebrew letters with Nikon.
 2. Change in Tacotron 2 model the input letters in your set UNICODE-8 of Hebrew letters with Nikon.
