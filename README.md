@@ -31,8 +31,9 @@ We implemented several functions that deal with processing and converting Hebrew
 
 
 ## What can be done to make this model even more robust:
-1. Make a set of all the possible UNICODE-8 of Hebrew letters with Nikon.
-2. Change in Tacotron 2 model the input letters to your set of UNICODE-8 Hebrew letters with Nikod.
+1. Use the Hebrew package to create a set of all the possible Hebrew letters with Nikod in UNICODE-8.
+2. Change Tacotron's 2 input letters to the set that you created in Step 1.
+3. Create a new transcript algorithm that can convert Hebrew with Nikod to UNICODE-8.
 
 ### Contact Us
 
