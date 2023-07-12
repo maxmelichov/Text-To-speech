@@ -1,6 +1,9 @@
 # Text-To-speech
 Welcome to the Robo-Shaul repository! Here, you'll find everything you need to train your own Robo-Shaul or use pre-trained models. Robo-Shaul is a text-to-speech system that converts Hebrew text into speech using Tacotron 2 TTS as a framework
 
+Although the model that won the competition had a training duration of only 5k steps.
+ a subsequent model was developed after the competition deadline. This advanced model underwent an extensive training process of 90k steps, utilizing an enhanced training methodology that incorporated a broader spectrum of extreme cases. These novel training techniques were absent in the previous model, providing the later model with a significant advantage in terms of its capabilities and performance.
+
 #### For a demo look [here](https://maxmelichov.github.io/)
 
 For a quick start look at [Notebook](https://github.com/maxmelichov/Text-To-speech/blob/main/Tacotron_Synthesis_Notebook_contest_notebook.ipynb) or Open In Colab <a target="_blank" href="https://colab.research.google.com/drive/1heUHKqCUwXGX_NRZUeN5J9UdB9UVV32m#scrollTo=IbrwoO0A1D0b"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
