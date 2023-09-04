@@ -21,7 +21,7 @@ To download the trained models, go to [model with 90K steps](https://drive.googl
 The model expects diacritized Hebrew (עברית מנוקדת), we recommend [Nakdimon](https://nakdimon.org) by Elazar Gershuni and Yuval Pinter. The link is to a free online tool, the code and model are also available on GitHub at [https://github.com/elazarg/nakdimon](https://github.com/elazarg/nakdimon)
 
 ## Data Creation 
-For a quick start look at [Notebook](https://github.com/maxmelichov/Text-To-speech/blob/main/DataCreation.ipynb)https://github.com/maxmelichov/Text-To-speech/blob/main/DataCreation.ipynb)
+For a quick start look at [Notebook](https://github.com/maxmelichov/Text-To-speech/blob/main/DataCreation.ipynb)
 
 ## How to use the training notebook and the synthesis notebook
 These videos will help you to gather the data and also train the model: [Part1](https://www.youtube.com/watch?v=b1fzyM0VhhI),[Part2](https://www.youtube.com/watch?v=gVqSEIr2PD4&t=284s) 
