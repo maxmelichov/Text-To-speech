@@ -1,4 +1,4 @@
-# Text-To-speech
+# Text-To-Speech
 Welcome to the Robo-Shaul repository! Here, you'll find everything you need to train your own Robo-Shaul or use pre-trained models. Robo-Shaul is a text-to-speech system that converts Hebrew text into speech using Tacotron 2 TTS as a framework
 
 Although the model that won the competition had a training duration of only 5k steps.
