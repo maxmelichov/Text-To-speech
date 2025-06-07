@@ -1,1 +1,10 @@
 venv
+*.pt
+data/*
+outdir
+checkpoints/logs
+inference_results/*
+not_needed_nomore
+glow.py
+__pycache__
+/*/__pycache__

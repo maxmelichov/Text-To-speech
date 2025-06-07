@@ -1,4 +1,5 @@
 import re
+from hebrew import Hebrew
 
  ##deals with . and , in a normal string
 def break_to_letter_and_rebuild(string):

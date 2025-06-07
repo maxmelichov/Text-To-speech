@@ -1,0 +1,1 @@
+data/saspeech_gold_standard/wavs/gold_000_line_000.npy|hhinehh hhatshoovahh shelo meaz q

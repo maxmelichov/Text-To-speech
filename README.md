@@ -5,6 +5,68 @@ Although the model that won the competition had a training duration of only 5k s
 
 A subsequent model was developed after the competition deadline. This advanced model underwent an extensive training process of 90k steps, utilizing an enhanced training methodology that incorporated a broader spectrum of extreme cases. These novel training techniques were absent in the previous model, providing the later model with a significant advantage in terms of its capabilities and performance.
 
+## Prerequisites
+
+Before getting started, ensure you have Python 3.10 installed on your system.
+
+### Installation Steps
+
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/maxmelichov/Text-To-speech.git
+    cd Text-To-speech
+    ```
+
+2. **Set up virtual environment:**
+    ```bash
+    python3.10 -m venv venv
+    source venv/bin/activate  # Linux/Mac
+    # or
+    activate.bat  # Windows
+    ```
+
+3. **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. **Clone required submodules:**
+    ```bash
+    git clone https://github.com/maxmelichov/tacotron2.git
+    git submodule init
+    git submodule update
+    git clone https://github.com/maxmelichov/waveglow.git
+    cp waveglow/glow.py ./
+    ```
+
+### Download Pre-trained Models
+
+- **WaveGlow model:** [Download here](https://drive.usercontent.google.com/download?id=19CVIL0TL_yyW-qC4jJ2vPht5cxc6VQpO&export=download&authuser=0)
+- **Tacotron2 weights:** [Download here](https://drive.usercontent.google.com/download?id=13B_NfAw8y-A9pg-xLcP5kQ_7dbObGc8S&export=download&authuser=0)
+
+### Training Data
+
+Download the SASPEECH dataset from [OpenSLR](https://openslr.org/134).
+
+### Usage
+
+1. **Preprocess the data:**
+    ```bash
+    python data_preprocess.py
+    ```
+
+2. **Train the model:**
+    ```bash
+    python train.py
+    ```
+
+3. **Test the model:**
+    ```bash
+    python inference.py
+    ```
+
+
+
 #### For a demo look [here](https://maxmelichov.github.io/)
 
 For a quick start look at [Notebook](https://github.com/maxmelichov/Text-To-speech/blob/main/Tacotron_Synthesis_Notebook_contest_notebook.ipynb) or Open In Colab <a target="_blank" href="https://colab.research.google.com/drive/1heUHKqCUwXGX_NRZUeN5J9UdB9UVV32m#scrollTo=IbrwoO0A1D0b"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
@@ -14,7 +76,7 @@ For a quick start look at [Notebook](https://github.com/maxmelichov/Text-To-spee
 
 The system consists of the SASPEECH dataset, which is a collection of recordings of Shaul Amsterdamski's unedited recordings for the podcast 'Hayot Kis', and a Text-to-Speech system trained on the dataset, implemented in the Tacotron 2 by Nvidia AI TTS framework.
 
-To download the dataset for training, go to [link](https://openslr.org/134)
+
 
 To download the trained models, go to [model with 90K steps](https://drive.google.com/uc?id=13B_NfAw8y-A9pg-xLcP5kQ_7dbObGc8S&export=download), [model with 5K steps](https://drive.google.com/u/0/uc?id=1iE3VgeQsyZcIgAXYmwhk-FzWktwrT2Wo&export=download)
 
