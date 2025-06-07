@@ -95,14 +95,6 @@ Robo-Shaul was originally developed for a competition, where the winning model w
 
 **Note:** The model expects diacritized Hebrew (עברית מנוקדת). For diacritization, we recommend [Nakdimon](https://nakdimon.org) ([GitHub](https://github.com/elazarg/nakdimon)).
 
----
-
-## 🏗️ Improving the Model
-
-1. Use the `hebrew` package to create a set of all possible Hebrew letters with Nikud in Unicode-8.
-2. Update Tacotron 2's input set to use this new character set.
-3. Develop a new transcript algorithm to convert diacritized Hebrew to Unicode-8.
-
 
 ---
 
