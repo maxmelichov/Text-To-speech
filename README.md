@@ -44,10 +44,29 @@ Robo-Shaul was originally developed for a competition, where the winning model w
 
 ---
 
+## 📁 Project Structure
+
+The main directories used in this project are:
+
+```
+Text-To-speech/
+├── data/                  # Place the SASPEECH dataset here
+├── checkpoints/           # Stores Tacotron2 model checkpoints (*.pt files)
+├── waveglow_weights/      # Stores WaveGlow model checkpoint (*.pt file)
+├── tacotron2/             # Tacotron2 source code (cloned as submodule)
+├── waveglow/              # WaveGlow source code (cloned as submodule)
+├── ...
+```
+
+- **data/**: Put your downloaded and preprocessed dataset here.
+- **checkpoints/**: Save and load Tacotron2 model weights (e.g., `checkpoint_90000.pt`).
+- **waveglow_weights/**: Place the WaveGlow model checkpoint file (e.g., `waveglow_256channels.pt`).
+
+---
+
 ## 📦 Download Pre-trained Models
 
 - **WaveGlow model:** [Download](https://drive.usercontent.google.com/download?id=19CVIL0TL_yyW-qC4jJ2vPht5cxc6VQpO&export=download&authuser=0)
-- **Tacotron2 weights:** [Download](https://drive.usercontent.google.com/download?id=13B_NfAw8y-A9pg-xLcP5kQ_7dbObGc8S&export=download&authuser=0)
 - **Model with 90K steps:** [Download](https://drive.google.com/uc?id=13B_NfAw8y-A9pg-xLcP5kQ_7dbObGc8S&export=download)
 - **Model with 5K steps:** [Download](https://drive.google.com/u/0/uc?id=1iE3VgeQsyZcIgAXYmwhk-FzWktwrT2Wo&export=download)
 
@@ -64,6 +83,11 @@ Robo-Shaul was originally developed for a competition, where the winning model w
 1. **Preprocess the data:**
     ```bash
     python data_preprocess.py
+    ```
+    After running the script, ensure you generate a `.txt` file in the same format as the examples in the `filelists` directory:
+
+    ```
+    path/to/audio.wav|transcript in Hebrew that using English letters
     ```
 
 2. **Train the model:**
