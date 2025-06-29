@@ -18,13 +18,14 @@ import HebrewToEnglish
 class TTSInference:
     """Text-to-Speech inference class using Tacotron2 and WaveGlow."""
     
-    def __init__(self, tacotron2_model_path: str, waveglow_model_path: str):
+    def __init__(self, tacotron2_model_path: str, waveglow_model_path: str, device: str = "cpu"):
         self.tacotron2_model_path = tacotron2_model_path
         self.waveglow_model_path = waveglow_model_path
         self.model = None
         self.waveglow = None
         self.denoiser = None
         self.hparams = None
+        self.device = device
         
     def load_models(self) -> bool:
         """Load Tacotron2 and WaveGlow models."""
@@ -44,13 +45,15 @@ class TTSInference:
             self.hparams.gate_threshold = 0.1
             
             self.model = Tacotron2(self.hparams)
-            checkpoint = torch.load(self.tacotron2_model_path, map_location='cpu', weights_only=False)
+            checkpoint = torch.load(self.tacotron2_model_path, map_location=self.device, weights_only=False)
             self.model.load_state_dict(checkpoint['state_dict'])
+            self.model = self.model.to(self.device)
             self.model.eval()
             
             print("Loading WaveGlow model...")
-            waveglow_checkpoint = torch.load(self.waveglow_model_path, map_location='cpu', weights_only=False)
+            waveglow_checkpoint = torch.load(self.waveglow_model_path, map_location=self.device, weights_only=False)
             self.waveglow = waveglow_checkpoint['model']
+            self.waveglow = self.waveglow.to(self.device)
             self.waveglow.eval()
             
             for k in self.waveglow.convinv:
@@ -97,7 +100,7 @@ class TTSInference:
                 # Generate audio
                 with torch.no_grad():
                     sequence = np.array(text_to_sequence(line, ['english_cleaners']))[None, :]
-                    sequence = torch.autograd.Variable(torch.from_numpy(sequence)).long()
+                    sequence = torch.autograd.Variable(torch.from_numpy(sequence)).long().to(self.device)
                     
                     mel_outputs, mel_outputs_postnet, _, alignments = self.model.inference(sequence)
                     audio = self.waveglow.infer(mel_outputs_postnet, sigma=sigma)
@@ -135,6 +138,8 @@ def main():
                        help="WaveGlow sigma parameter")
     parser.add_argument("--raw-input", action="store_true",
                        help="Use raw input without Hebrew to English conversion")
+    parser.add_argument("--device", type=str, default="cpu", choices=["cpu", "cuda"],
+                       help="Device to run inference on: 'cpu' or 'cuda' (default: cpu)")
     
     args = parser.parse_args()
     
@@ -154,7 +159,7 @@ def main():
         sys.exit(1)
     
     # Initialize TTS inference
-    tts = TTSInference(args.tacotron2_model, args.waveglow_model)
+    tts = TTSInference(args.tacotron2_model, args.waveglow_model, device=args.device)
     
     # Load models
     if not tts.load_models():

@@ -197,9 +197,8 @@ def prepare_directories_and_logger(output_directory: str, log_directory: str, ra
     return tacotron_logger
 
 
-def load_model(hparams):
+def load_model(hparams, device):
     """Load and initialize the Tacotron2 model."""
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model = Tacotron2(hparams).to(device)
     if hparams.fp16_run:
         model.decoder.attention_layer.score_mask_value = finfo('float16').min
@@ -317,20 +316,20 @@ def validate(model, criterion, valset, iteration: int, batch_size: int, n_gpus: 
 def train(output_directory: str, log_directory: str, checkpoint_path: Optional[str], 
           warm_start: bool, n_gpus: int, rank: int, group_name: Optional[str], 
           hparams, log_directory2: Optional[str], checkpoint_folder_path: Optional[str],
-          preferred_checkpoint: Optional[str]) -> None:
+          preferred_checkpoint: Optional[str], device: str = "cpu") -> None:
     """Main training function."""
     # Set device
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    device = torch.device(device)
     print(f"Using device: {device}")
     
     if hparams.distributed_run:
         init_distributed(hparams, n_gpus, rank, group_name)
 
     torch.manual_seed(hparams.seed)
-    if torch.cuda.is_available():
+    if device.type == "cuda":
         torch.cuda.manual_seed(hparams.seed)
 
-    model = load_model(hparams)
+    model = load_model(hparams, device)
     learning_rate = hparams.learning_rate
     optimizer = torch.optim.Adam(
         model.parameters(), 
@@ -588,7 +587,8 @@ def main(args: argparse.Namespace) -> None:
         hparams=hparams,
         log_directory2=args.log_directory2,
         checkpoint_folder_path=args.checkpoint_folder_path,
-        preferred_checkpoint=args.preferred_checkpoint
+        preferred_checkpoint=args.preferred_checkpoint,
+        device=args.device
     )
 
 
@@ -622,6 +622,8 @@ if __name__ == "__main__":
                         help='Path to validation files list')
     parser.add_argument('--generate_mels', action='store_true', default=True,
                         help='Generate mel spectrograms from audio files')
+    parser.add_argument('--device', type=str, default='cpu', choices=['cpu', 'cuda'],
+                        help="Device to run training on: 'cpu' or 'cuda' (default: cpu)")
     
     args = parser.parse_args()
     main(args)
