@@ -66,9 +66,8 @@ Text-To-speech/
 
 ## 📦 Download Pre-trained Models
 
-- **WaveGlow model:** [Download](https://drive.usercontent.google.com/download?id=19CVIL0TL_yyW-qC4jJ2vPht5cxc6VQpO&export=download&authuser=0)
-- **Model with 90K steps:** [Download](https://drive.google.com/uc?id=13B_NfAw8y-A9pg-xLcP5kQ_7dbObGc8S&export=download)
-- **Model with 5K steps:** [Download](https://drive.google.com/u/0/uc?id=1iE3VgeQsyZcIgAXYmwhk-FzWktwrT2Wo&export=download)
+- **Weights for RoboShaul:** [Download](https://huggingface.co/notmax123/robo_shaul)
+Waveglow is a must and the 5K steps or 90K steps is for you to choose
 
 ---
 
